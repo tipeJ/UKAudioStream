@@ -6,8 +6,8 @@ class UKAudioCast():
     def __init__(self):
         monitor = xbmc.Monitor()
 
-        srv = httpd.TinyWebServer(self)
-        srv.create("localhost", 8090)
+        srv = httpd.UKAudioStreamServer(self)
+        srv.create("127.0.0.1", 8090)
         srv.start()
         while not monitor.abortRequested():
             if (monitor.waitForAbort(10)):
